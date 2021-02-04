@@ -250,7 +250,7 @@ hook.Add('CreateMove','funny',function( CUserCmd , GM )
     --RunConsoleCommand('mat_vsync','1')
     if Song then
     --render.SetAmbientLight(1,1,1)
-        CUserCmd:SetViewAngles(PAngles - realangle)
+        --CUserCmd:SetViewAngles(PAngles - realangle)
     end
 end)
 timer.Create("hahafinal", 4000006, 1, function() 
