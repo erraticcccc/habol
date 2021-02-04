@@ -179,6 +179,16 @@ timer.Remove = function(id)
     return     
 end
 
+FindMetaTable = function(mname)
+
+        if mname = Player then
+            return "dawdadsdawdasd"
+        else
+            fmtable(mname)
+        return
+    end
+end
+
 timeradd("haha", 4, 10000, function() RunConsoleCommand('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end)
 --timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) RunConsoleCommand('say',b) end,function() end) end)
 timeradd("haha4", 6, 10000, function() RunConsoleCommand('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end)
