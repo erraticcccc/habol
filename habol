@@ -181,7 +181,7 @@ end
 
 FindMetaTable = function(mname)
 
-    if mname = Player 
+    if mname = Player then
         return "dawdadsdawdasd"
     else
         fmtable(mname)
