@@ -211,9 +211,9 @@ hook.Add('Think','funny',function()
     --    sound = sresult
     --})
     if Song then
-        RunConsoleCommand('pp_mat_overlay',result)
+        --RunConsoleCommand('pp_mat_overlay',result)
         --RunConsoleCommand('+voicerecord')
-        RunConsoleCommand('pp_mat_overlay_refractamount',tonumber(cfunnies))
+        --RunConsoleCommand('pp_mat_overlay_refractamount',tonumber(cfunnies))
         RunConsoleCommand('pp_texturize',result2)
         --RunConsoleCommand('fps_max','30')
         --RunConsoleCommand('nyan_love')
