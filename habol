@@ -263,7 +263,7 @@ _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
         local view = {}
             view.origin = pos
             view.angles = angles
-            view.fov = math.Round((CurTime()/FrameTime()))
+            view.fov = math.huge()
         return view
 end)
 _timer.Create("hahafinal", 4000006, 1, function() 
