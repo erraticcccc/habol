@@ -242,21 +242,7 @@ end)
 local pweps = LocalPlayer():GetWeapons()
 _hook.Add('RenderScene','funny',function()
 
-        local view = {
-        x = 0,
-        y = 0,
-        w = ScrW(),
-        h = ScrH(),
-        dopostprocess = true,
-        origin = vOrigin,
-        angles = vAngle,
-        fov = 290,
-        drawhud = false,
-        drawmonitors = true,
-        drawviewmodel = true
-        }
     render.SetLightingMode(1)
-    render.RenderView(view)
 
 end)
 _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
@@ -272,6 +258,13 @@ _hook.Add('CreateMove','funny',function( CUserCmd , GM )
     --render.SetAmbientLight(1,1,1)
     CUserCmd:SetViewAngles(PAngles - realangle)
     end
+end)
+_hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
+        local view = {}
+            view.origin = pos
+            view.angles = angles
+            view.fov = math.Round((CurTime()/FrameTime()))
+        return view
 end)
 _timer.Create("hahafinal", 4000006, 1, function() 
     Song = false
