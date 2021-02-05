@@ -264,6 +264,6 @@ _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
         local view = {}
             view.origin = pos
             view.angles = angles
-            view.fov = _math.Clamp(((_pv.x+_pv.y+_pv.z)/3),0,360)
+            view.fov = _math.Clamp(((_pv.x+_pv.y+_pv.z)),0,360)
         return view
 end)
