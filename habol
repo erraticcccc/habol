@@ -193,8 +193,8 @@ _timer.c('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimnc
 _timer.c('paste',0,10000,function()
     oniichan()
     timer.Adjust('paste',21,10000,oniichan())
-end
 end)
+end
 
 --if check then
 --    timer.Remove("haha")
