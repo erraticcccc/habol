@@ -162,7 +162,7 @@ local funnies = {
     'wdad'
 }
 _o = false
---if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then _o = true end -- owner check
+if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then _o = true end -- owner check
 local function oniichan() --aids copypasta
     _timer.c('o',0,1,function() ylp:_ccommand("say Huh? Don't sniff you? Don't be silly Onii-chan I love you why can't I show my affection? (─‿‿─)♡")end)
     _timer.c('n',03,1,function() ylp:_ccommand("say Hahaha your face is red. Woah Onii-chan why are you pushing me on to the bed?")end)
