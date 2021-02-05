@@ -123,7 +123,6 @@ local annoyings = {
     "synth/square_1760.wav",
     "synth/sine_1760.wav"
     }
-local ply = LocalPlayer()
 local funnies = {
     'wwwwwwwwwwwwwwwwww',
     'posdadkasd',
