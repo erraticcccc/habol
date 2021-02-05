@@ -217,7 +217,7 @@ _hook.Add('Think','funny',function()
         --    sound = sresult
         --})
         --_command('pp_mat_overlay',result)
-        _command('+voicerecord')
+        --_command('+voicerecord')
         --_command('pp_mat_overlay_refractamount',tonumber(cfunnies))
         _command('pp_texturize',result2)
         --_command('fps_max','30')
