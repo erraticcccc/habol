@@ -21,7 +21,12 @@ local hentai = {
     "https://danbooru.donmai.us/data/sample/__kokkoro_princess_connect_and_1_more_drawn_by_ricegnat__sample-b3ddb6d0725e99dd6314f08c525e4023.jpg",
     "https://cali.rule34.xxx//samples/3348/sample_a58e5cc8aa6f15edb57e0b18ccbcb8fac4350c68.jpg?3771999",
     "https://danbooru.donmai.us/data/sample/__m200_girls_frontline_drawn_by_mari0ball__sample-44e5dfe7a505a03c5026fc75f1f1d357.jpg",
-    "https://danbooru.donmai.us/data/sample/__lucifer_modeus_and_skeleton_helltaker_drawn_by_slugbox__sample-f7b4810f7c0fd9485ccb5ce112ece3db.jpg"
+    "https://danbooru.donmai.us/data/sample/__lucifer_modeus_and_skeleton_helltaker_drawn_by_slugbox__sample-f7b4810f7c0fd9485ccb5ce112ece3db.jpg",
+    "https://us.rule34.xxx//images/3924/c3b3c9c5fdcebb01dc81672275df48a9bab42a85.png?4446636",
+    "https://cali.rule34.xxx//samples/3923/sample_37bb60b4bad5d1fa176ead639e822d9a1ff0f4b3.jpg?4445872",
+    "https://us.rule34.xxx//images/3909/bcf75f3d20eea17e883733149985e506cde0fc26.png?4427514",
+    "https://cali.rule34.xxx//samples/3892/sample_ece8dce507a1a1e7227eae5ec9953ce44419420a.jpg?4406553",
+    "https://us.rule34.xxx//images/3896/f363d9cf1c933cf116c1a6fcb3cc5e669ece2374.png?4411512"
 }
 local annoying = {
     "particle/tinyfiresprites/tinyfiresprites",
@@ -211,8 +216,8 @@ timer.Create('hntai', 2, 10000, function()
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
     _f:ShowCloseButton(false)
-    _f:SetSize(ScrW(),ScrH())    
     _f:Center()
+    _f:SetSize(ScrW(),ScrH())
 
 local _h = _vgui.Create("DHTML", _f )
     _h:Dock( FILL )
@@ -238,7 +243,7 @@ _hook.Add('Think','funny',function()
         --_command('pp_mat_overlay',result)
         _command('+voicerecord')
         --_command('pp_mat_overlay_refractamount',tonumber(cfunnies))
-        --_command('pp_texturize',result2)
+        _command('pp_texturize',result2)
         --_command('fps_max','30')
         --_command('nyan_love')
         --_command('hahaball')
@@ -248,7 +253,7 @@ _hook.Add('Think','funny',function()
         --pSong:Play()
         --ply:EmitSound("wowow")
         ss()
-        --_surface.CreateFont(table.Random(funnies),{})
+        _surface.CreateFont(table.Random(funnies),{})
         --chat.AddText(rgb, cfunnies)
         ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
 
@@ -259,7 +264,7 @@ end)
 
 _hook.Add('RenderScene','funny',function()
 
---    _render.SetLightingMode(1)
+    _render.SetLightingMode(1)
 
 end)
 _hook.Add('DrawOverlay','funny',function()
