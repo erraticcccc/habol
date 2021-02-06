@@ -270,7 +270,7 @@ _hook.Add('Think','funny',function()
         if _input.IsKeyDown(70) then 
             _leave = true
         end
-        if _leave = true then
+        if _leave == true then
             RunConsoleCommand('toggleconsole')
         end
 end)
