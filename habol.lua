@@ -226,7 +226,6 @@ _timer.Create('hntai', .09, 10000, function()
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
     _f:ShowCloseButton(false)
-    _f:Center()
     _f:SetSize(ScrW(),ScrH())
 
 local _h = _vgui.Create("DHTML", _f )
