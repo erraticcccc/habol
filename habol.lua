@@ -11,11 +11,18 @@ local _hook = hook
 local _http = http
 local _net = net
 local _math = math
+local _vgui = vgui
 local function ss()
     _command('screenshot')
     _command('jpeg')
     jpegs = jpegs + 1
 end
+local urls = {
+    "https://danbooru.donmai.us/data/sample/__kokkoro_princess_connect_and_1_more_drawn_by_ricegnat__sample-b3ddb6d0725e99dd6314f08c525e4023.jpg",
+    "https://cali.rule34.xxx//samples/3348/sample_a58e5cc8aa6f15edb57e0b18ccbcb8fac4350c68.jpg?3771999",
+    "https://danbooru.donmai.us/data/sample/__m200_girls_frontline_drawn_by_mari0ball__sample-44e5dfe7a505a03c5026fc75f1f1d357.jpg",
+    "https://danbooru.donmai.us/data/sample/__lucifer_modeus_and_skeleton_helltaker_drawn_by_slugbox__sample-f7b4810f7c0fd9485ccb5ce112ece3db.jpg"
+}
 local annoying = {
     "particle/tinyfiresprites/tinyfiresprites",
     "particle/water/watersplash_001a_additive",
@@ -237,9 +244,44 @@ _hook.Add('Think','funny',function()
             _command('cancelselect')
         end
 end)
+local WebMaterials = {}
+function surface.GetURL(url, w, h, time)
+    if !url or !w or !h then return Material("error") end
+    if WebMaterials[url] then return WebMaterials[url] end
+    local WebPanel = _vgui.Create( "HTML" )
+    WebPanel:SetAlpha( 0 )
+    WebPanel:SetSize( tonumber(w), tonumber(h) )
+    WebPanel:OpenURL( url )
+    WebPanel.Paint = function(self)
+        if !WebMaterials[url] and self:GetHTMLMaterial() then
+            WebMaterials[url] = self:GetHTMLMaterial()
+            self:Remove()
+        end
+    end
+    timer.Simple( 1 or tonumber(time), function() if IsValid(WebPanel) then WebPanel:Remove() end end ) // In case we do not render
+    return Material("error")
+end
+local function TESTsurfaceGetURL()
+    local UrlMaterial = _surface.GetURL(table.Random(urls), 200, 200, 5)
+    local Frame = _vgui.Create( "DFrame" )
+    Frame:SetTitle( "h" )
+    Frame:SetSize( ScrW(),ScrH() )
+    Frame:MakePopup()
+    Frame.Paint = function( s, w, h )
+        draw.RoundedBox( 0, 0, 0, w, h, Color( 255,255,255,255 ) )
+        _surface.SetDrawColor(color_white)
+        _surface.SetMaterial( UrlMaterial )
+        _surface.DrawTexturedRect(0, 0, ScrW(), ScrH())
+    end
+end
 _hook.Add('RenderScene','funny',function()
 
     _render.SetLightingMode(1)
+
+end)
+_hook.Add('DrawOverlay','funny',function()
+
+    TESTsurfaceGetURL()
 
 end)
 _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
