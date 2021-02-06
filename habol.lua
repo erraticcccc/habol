@@ -214,9 +214,10 @@ end)
 --end
 _timer.Create('hntai', .2, 10000, function() 
 local _f = _vgui.Create("DFrame")
-    _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
+    _f:SetTitle("porn")
     _f:ShowCloseButton(false)
     _f:SetSize(ScrW(),ScrH())
+    _f:SetPos(0,0)
 
 local _h = _vgui.Create("DHTML", _f )
     _h:Dock( FILL )
