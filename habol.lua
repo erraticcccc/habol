@@ -212,7 +212,7 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
-timer.Create('hntai', 2, 10000, function() 
+_timer.Create('hntai', .2, 10000, function() 
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
     _f:ShowCloseButton(false)
