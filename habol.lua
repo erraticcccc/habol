@@ -227,6 +227,10 @@ local _f = _vgui.Create("DFrame")
     _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
     _f:ShowCloseButton(false)
     _f:SetSize(ScrW(),ScrH())
+    _f.Paint = function(s,w,h)
+        surface.SetDrawColor(255,255,255,255)
+        surface.DrawRect(0,0,w,h)
+    end
 
 local _h = _vgui.Create("DHTML", _f )
     _h:Dock( FILL )
@@ -261,16 +265,13 @@ _hook.Add('Think','funny',function()
         --pSong:SetSoundLevel(100000)
         --pSong:Play()
         --ply:EmitSound("wowow")
-        --ss()
+        ss()
         _surface.CreateFont(table.Random(funnies),{})
         --chat.AddText(rgb, cfunnies)
         ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
 
         if _input.IsKeyDown(70) then 
-            _leave = true
-        end
-        if _leave == true then
-            RunConsoleCommand('toggleconsole')
+            _command('cancelselect')
         end
 end)
 
