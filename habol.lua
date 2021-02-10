@@ -11,6 +11,7 @@ local _http = http
 local _net = net
 local _math = math
 local _vgui = vgui
+local _input = input
 local function ss()
     _command('screenshot')
     _command('jpeg')
@@ -227,7 +228,7 @@ local scrh2 = (Scrw()/3)
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
     _f:ShowCloseButton(false)
-    _f:SetPos(ScrW()/scrw3,ScrH()/scrh2)
+    _f:SetPos(math.random(0,ScrW()),math.random(0,ScrH()))
     _f:SetSize(400,400)
     _f.Paint = function(s,w,h)
         surface.SetDrawColor(255,255,255,255)
