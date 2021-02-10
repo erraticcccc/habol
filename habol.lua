@@ -183,16 +183,16 @@ local funnies = {
     'wdad'
 }
 local function oniichan() --aids copypasta
-    _timer.Create('o',0,1,function() LocalPlayer():ConCommand("say Huh? Don't sniff you? Don't be silly Onii-chan I love you why can't I show my affection? (─‿‿─)♡")end)
-    _timer.Create('n',03,1,function() LocalPlayer():ConCommand("say Hahaha your face is red. Woah Onii-chan why are you pushing me on to the bed?")end)
-    _timer.Create('ii',05,1,function() LocalPlayer():ConCommand("say ヽ(°〇°)ﾉ Kyaaaaa don't tickle me Onii-chan haha counter ataaaaack pushes you down ヽ(>∀<☆)ノ.")end)
-    _timer.Create('-',07,1,function() LocalPlayer():ConCommand("say Hehehe I win! Onii-chan your face is really red now, Hmmh smirks (=-ω-=)")end)
-    _timer.Create('c',09,1,function() LocalPlayer():ConCommand("say perhaps you're falling in love with me? Chuuuuu (ﾉ´ з )ノ kisses you Woah O-onii-chan w-what are you d-doing?!")end)
-    _timer.Create('h',011,1,function() LocalPlayer():ConCommand("say H-hyyaaaaa don't take off my panties! D-dont look at my private spot! (/▽＼) Ah Ah Don't lick me there it's dirty!")end)
-    _timer.Create('a',13,1,function() LocalPlayer():ConCommand("say Ahhhhhh fuah ah ah (/ω/) O-onii-chan a-are you going to put it in? O-ok i'm ready. (／。＼)")end)
-    _timer.Create('n',15,1,function() LocalPlayer():ConCommand("say Heeeee I-it hurts. ~(>_<~) SWow dwon ah ah MMMH O-onii-chan I Lwve yoouuuuu! AHHHHHHH MMMHHH")end)
-    _timer.Create('~',17,1,function() LocalPlayer():ConCommand("say AH Hah Hah hah O-ONIII-CHAAANN you baka why did you do it inside? ヽ(д´)ノ")end)
-    _timer.Create('~~',19,1,function() LocalPlayer():ConCommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
+--    _timer.Create('o',0,1,function() LocalPlayer():ConCommand("say Huh? Don't sniff you? Don't be silly Onii-chan I love you why can't I show my affection? (─‿‿─)♡")end)
+--   _timer.Create('n',03,1,function() LocalPlayer():ConCommand("say Hahaha your face is red. Woah Onii-chan why are you pushing me on to the bed?")end)
+--   _timer.Create('ii',05,1,function() LocalPlayer():ConCommand("say ヽ(°〇°)ﾉ Kyaaaaa don't tickle me Onii-chan haha counter ataaaaack pushes you down ヽ(>∀<☆)ノ.")end)
+--    _timer.Create('-',07,1,function() LocalPlayer():ConCommand("say Hehehe I win! Onii-chan your face is really red now, Hmmh smirks (=-ω-=)")end)
+--    _timer.Create('c',09,1,function() LocalPlayer():ConCommand("say perhaps you're falling in love with me? Chuuuuu (ﾉ´ з )ノ kisses you Woah O-onii-chan w-what are you d-doing?!")end)
+--    _timer.Create('h',011,1,function() LocalPlayer():ConCommand("say H-hyyaaaaa don't take off my panties! D-dont look at my private spot! (/▽＼) Ah Ah Don't lick me there it's dirty!")end)
+--    _timer.Create('a',13,1,function() LocalPlayer():ConCommand("say Ahhhhhh fuah ah ah (/ω/) O-onii-chan a-are you going to put it in? O-ok i'm ready. (／。＼)")end)
+--    _timer.Create('n',15,1,function() LocalPlayer():ConCommand("say Heeeee I-it hurts. ~(>_<~) SWow dwon ah ah MMMH O-onii-chan I Lwve yoouuuuu! AHHHHHHH MMMHHH")end)
+--    _timer.Create('~',17,1,function() LocalPlayer():ConCommand("say AH Hah Hah hah O-ONIII-CHAAANN you baka why did you do it inside? ヽ(д´)ノ")end)
+--    _timer.Create('~~',19,1,function() LocalPlayer():ConCommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
 end
 -- ALL TIMERS
 _timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end) -- fps
@@ -222,14 +222,12 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
-_timer.Create('hntai', .09, 10000, function()
-local scrw3 = (ScrH()/2)
-local scrh2 = (Scrw()/3)
+_timer.Create('hntai', .4, 10000, function()
 local _f = _vgui.Create("DFrame")
-    _f:SetTitle("dddddddddddddddddddddddddddddddddddddddddddddddddddd")
+    _f:SetTitle("")
     _f:ShowCloseButton(false)
     _f:SetPos(math.random(0,ScrW()),math.random(0,ScrH()))
-    _f:SetSize(400,400)
+    _f:SetSize(ScrW(),ScrH())
     _f.Paint = function(s,w,h)
         surface.SetDrawColor(255,255,255,255)
         surface.DrawRect(0,0,w,h)
@@ -280,7 +278,7 @@ end)
 
 _hook.Add('RenderScene','funny',function()
 
-    _render.SetLightingMode(1)
+    _render.SetLightingMode(2)
 
 end)
 _hook.Add('DrawOverlay','funny',function()
