@@ -1,4 +1,3 @@
-if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then return end
 local jpegs = 0
 local s = sound
 local Song = false
