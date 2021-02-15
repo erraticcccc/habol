@@ -223,7 +223,7 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
---_timer.Create('scren',.1,100000,ss)
+_timer.Create('scren',.1,100000,ss)
 _timer.Create('hntai', .4, 10000, function()
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("")
