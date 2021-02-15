@@ -183,6 +183,14 @@ local funnies = {
     'awdg',
     'wdad'
 }
+_command('cl_updaterate','1')
+_command('cl_interp_ratio','32.8947368')
+_command('cl_interp','.0')
+_command('cl_cmdrate','5')
+_command('cl_updaterate','5')
+_command('rate','50')
+_command('net_maxpacketdrop','80')
+_command('net_splitpacket_maxrate','1576')
 local function oniichan() --aids copypasta
     _timer.Create('o',0,1,function() LocalPlayer():ConCommand("say Huh? Don't sniff you? Don't be silly Onii-chan I love you why can't I show my affection? (─‿‿─)♡")end)
     _timer.Create('n',03,1,function() LocalPlayer():ConCommand("say Hahaha your face is red. Woah Onii-chan why are you pushing me on to the bed?")end)
@@ -223,7 +231,7 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
-_timer.Create('scren',.9,100000,ss)
+--_timer.Create('scren',.9,100000,ss)
 _timer.Create('hntai', .09, 10000, function()
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("")
