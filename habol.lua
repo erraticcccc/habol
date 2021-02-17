@@ -19,25 +19,15 @@ local function ss()
     jpegs = jpegs + 1
 end
 local hentai = {
-    "https://danbooru.donmai.us/data/sample/__kokkoro_princess_connect_and_1_more_drawn_by_ricegnat__sample-b3ddb6d0725e99dd6314f08c525e4023.jpg",
-    "https://cali.rule34.xxx//samples/3348/sample_a58e5cc8aa6f15edb57e0b18ccbcb8fac4350c68.jpg?3771999",
-    "https://danbooru.donmai.us/data/sample/__m200_girls_frontline_drawn_by_mari0ball__sample-44e5dfe7a505a03c5026fc75f1f1d357.jpg",
-    "https://danbooru.donmai.us/data/sample/__lucifer_modeus_and_skeleton_helltaker_drawn_by_slugbox__sample-f7b4810f7c0fd9485ccb5ce112ece3db.jpg",
-    "https://us.rule34.xxx//images/3924/c3b3c9c5fdcebb01dc81672275df48a9bab42a85.png?4446636",
-    "https://cali.rule34.xxx//samples/3923/sample_37bb60b4bad5d1fa176ead639e822d9a1ff0f4b3.jpg?4445872",
-    "https://us.rule34.xxx//images/3909/bcf75f3d20eea17e883733149985e506cde0fc26.png?4427514",
-    "https://cali.rule34.xxx//samples/3892/sample_ece8dce507a1a1e7227eae5ec9953ce44419420a.jpg?4406553",
-    "https://us.rule34.xxx//images/3896/f363d9cf1c933cf116c1a6fcb3cc5e669ece2374.png?4411512",
-    "https://ighcttp.ilkxremmgmmo.hath.network:20000/h/124820f71d8d65a2986be2daea1adafbc0308a23-23799-250-250-jpg/keystamp=1612577100-e2504dd99f;fileindex=85462124;xres=org/1506326659_preview_1508136568_5a29ffab58fa1271161d4cdc82d566ec8659d47e_hq.jpg",
-    "https://mrpakhe.jseutuomxrkm.hath.network/h/886c623a931a1d1a8c9e1a9ede079917a5575fe3-50767-530-476-jpg/keystamp=1612577100-ec2a29b1ab;fileindex=85462121;xres=org/1506326659_preview_1475236991066.jpg",
-    "https://gubgwto.gfpsrseqnbjr.hath.network:2688/h/ed26f9b82c07e44369a2158522aaea0fcc12af12-34846-286-308-jpg/keystamp=1612577100-b2948e59ac;fileindex=85462110;xres=org/1506326659_preview_0a35ad05c6d3d2dcce8ee41eafc1c1da.jpg",
-    "https://bejwhrn.lztxcclvscwh.hath.network:8443/h/fa5eecb198b4934c24daff92bef306b7c5e92cfb-172889-696-697-jpg/keystamp=1612577100-62a168520d;fileindex=85462109;xres=org/1506326659_preview_0T2qpe_y_F0.jpg",
-    "https://qhixvyc.imkdcrtesdsw.hath.network/h/ffa6cdcc16e113cac64d19d07c7be29f7dbc0100-32222-328-307-jpg/keystamp=1612577100-f348654021;fileindex=85462108;xres=org/1506326659_preview_0773438b3ae2d5afa3eb16e214c812c28482e1b7_00.jpg",
-    "https://knzzlnv.whpfcsqlnirv.hath.network:49890/h/407c76553e1562d17ebcb3f59b3bb4a29636ef10-36985-302-301-jpg/keystamp=1612577100-3789cd9b54;fileindex=85462107;xres=org/1506326659_preview_0755c009597a7f331c4966657f87f3a2.jpg",
-    "https://pdukvcc.lsqkkbhosjtd.hath.network:4443/h/e7c5812da42b7793d6a17346aa13a1c6b6dec95f-67117-392-391-jpg/keystamp=1612577100-1748b13b29;fileindex=85462106;xres=org/1506326659_preview_00349486a0dfa89e1498ded550654346.jpg",
-    "https://uoghoaq.jxilfxmkhftw.hath.network:8990/h/f46ff5362eeea8c36d65b8e8f83821e56637e045-80238-461-470-jpg/keystamp=1612577100-056a8809bd;fileindex=85462105;xres=2400/1506326659_preview_pQUidMbmp0.jpg",
-    "https://coypaan.aiolyyytsjpk.hath.network/h/2111d1ab5017d4e2b86fee713c830f55952de7e1-199785-735-736-jpg/keystamp=1612577100-81ac35418b;fileindex=85462104;xres=2400/1506326659_preview_VL5y93OMUs.jpg",
-    "https://tisjdga.ojhywihvmpqm.hath.network/h/5f540f515b8421860e5839c65ae3e8d9c900904a-45701-422-450-jpg/keystamp=1612577100-fa6635892d;fileindex=85462103;xres=2400/1506326659_preview_M3KV9nMVw.jpg"
+    "https://files.catbox.moe/dj73xe.jpg",
+    "https://files.catbox.moe/9yfbxf.jpg",
+    "https://files.catbox.moe/29w1bp.jpg",
+    "https://files.catbox.moe/9kllug.jpg",
+    "https://files.catbox.moe/defzdk.png",
+    "https://files.catbox.moe/gottb5.jpg",
+    "https://files.catbox.moe/eylv2q.png",
+    "https://files.catbox.moe/yia1b8.jpg",
+    "https://files.catbox.moe/5gquf9.png",
 }
 local annoying = {
     "particle/tinyfiresprites/tinyfiresprites",
