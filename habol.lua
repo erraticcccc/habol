@@ -1,4 +1,4 @@
-if LocalPlayer():GetUserGroup() == "admin" or LocalPlayer():GetUserGroup() == "superadmin" then return end 
+--if LocalPlayer():GetUserGroup() == "admin" or LocalPlayer():GetUserGroup() == "superadmin" then return end 
 local jpegs = 0
 local s = sound
 local Song = false
