@@ -187,7 +187,7 @@ local function oniichan() --aids copypasta
 end
 -- ALL TIMERS
 _timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end) -- fps
-_timer.Createreate("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
+--_timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
 _timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
 --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
 _timer.Create('hahasong', .1, 1, function() Song = true end)
