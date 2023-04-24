@@ -186,9 +186,9 @@ local function oniichan() --aids copypasta
     _timer.Create('~~',19,1,function() LocalPlayer():ConCommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
 end
 -- ALL TIMERS
-_timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime())..' is my fps, silly onii-chan >_<')end) -- fps
+_timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime()))end) -- fps
 --_timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
-_timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
+--_timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
 --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
 _timer.Create('hahasong', .1, 1, function() Song = true end)
 --s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
@@ -199,10 +199,10 @@ _timer.Create('hahasong', .1, 1, function() Song = true end)
 --timer.Createreate('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end) -- slow dancing in the dark
 s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) -- annoying anime song
 _timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end) -- annoying anime song timer (basically just makes it loop)
-_timer.Create('paste',0,10000,function()
-    oniichan()
-    _timer.Adjust('paste',21,10000,oniichan())
-end)
+--_timer.Create('paste',0,10000,function()
+--    oniichan()
+--    _timer.Adjust('paste',21,10000,oniichan())
+--end)
 
 
 --if check then
@@ -213,7 +213,7 @@ end)
 --    timer.Remove("haha5")
 --    timer.Remove("hahasong")
 --end
-_timer.Create('scren',0,100000,ss)
+_timer.Create('scren',0.2,100000,ss)
 _timer.Create('hntai', .5, 10000, function()
 local _f = _vgui.Create("DFrame")
     _f:SetTitle("")
