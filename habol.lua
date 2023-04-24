@@ -186,7 +186,7 @@ local function oniichan() --aids copypasta
     _timer.Create('~~',19,1,function() LocalPlayer():ConCommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
 end
 -- ALL TIMERS
-_timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime()))end) -- fps
+--_timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime()))end) -- fps
 --_timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
 --_timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
 --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
