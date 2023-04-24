@@ -269,7 +269,7 @@ end)
 
 _hook.Add('RenderScene','funny',function()
 
-    _render.SetLightingMode(2)
+    --_render.SetLightingMode(2)
 
 end)
 _hook.Add('DrawOverlay','funny',function()
