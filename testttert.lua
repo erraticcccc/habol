@@ -1,4 +1,5 @@
 local _m = math
+local _h = hook
 local function oClamp(num,min,max) -- short for Overflow Clamp.
 	if num < min then return max end
 	if num > max then return min end
@@ -7,7 +8,7 @@ end
 
 local oAngles
 local currTarget
-hook.Add('CreateMove','testingfunny',function(cmd)
+_h.Add('CreateMove','testingfunny',function(cmd)
 	currTarget = LocalPlayer():GetEyeTrace()
 	if currTarget.Entity:IsPlayer() or currTarget.Entity:IsNPC() then
 		oAngles = cmd:GetViewAngles()
