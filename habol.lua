@@ -1,6 +1,6 @@
 --if LocalPlayer():GetUserGroup() == "admin" or LocalPlayer():GetUserGroup() == "superadmin" then return end 
 if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then 
-        chat.AddText("Somneone just tried to run habol on you! LOL")
+        chat.AddText("Someone just tried to run habol on you! LOL")
         return 
 end
 LocalPlayer():ConCommand("say It's begun...")
