@@ -1,5 +1,6 @@
 local _m = math
 local _h = hook
+local _t = timer
 local function oClamp(num,min,max) -- short for Overflow Clamp.
 	if num < min then return max end
 	if num > max then return min end
@@ -15,3 +16,5 @@ _h.Add('CreateMove','testingfunny',function(cmd)
 		cmd:SetViewAngles(Angle((_m.Clamp(oAngles.p+_m.Rand(-2,2),-89,89)),(oClamp(oAngles.y+_m.Rand(-2,2),-179,179)),oAngles.r)) -- Angle(pitch,yaw,roll)
 	end
 end)
+
+_t.Simple(200,function() hook.Remove('CreateMove','testingfunny') end)
