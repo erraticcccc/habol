@@ -257,9 +257,6 @@ local function Everything()
                 _command('cancelselect')
             end
     end)
-    _hook.Add('DrawOverlay','funny',function()
-
-    end)
     _hook.Add('CreateMove','funny',function( CUserCmd , GM ) 
         local lolangle = _math.random(-24, 24)
         local realangle = Angle(lolangle, lolangle,0)
@@ -282,7 +279,7 @@ local function Everything()
 end
 
 _hook.Add("PlayerStartVoice", "asdasdas", function(ply)
-    if ply = LocalPlayer() then
+    if ply == LocalPlayer() then
         Everything()
     end
 end)
