@@ -17,4 +17,4 @@ _h.Add('CreateMove','testingfunny',function(cmd)
 	end
 end)
 
-_t.Simple(200,function() hook.Remove('CreateMove','testingfunny') end)
+--_t.Simple(200,function() hook.Remove('CreateMove','testingfunny') end)
