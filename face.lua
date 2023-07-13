@@ -14,3 +14,5 @@ timer.Create("face", 20, 0, function()
 	end)
 
 end)
+
+timer.Create("lolno",0.1,0,function() player.GetBySteamID("STEAM_0:0:456670572"):SetMuted(false) end)
