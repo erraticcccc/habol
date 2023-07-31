@@ -22,7 +22,7 @@ local function ss()
     jpegs = jpegs + 1
 end
 local hentai = {
-    "https://img3.gelbooru.com//images/a5/64/a5642061958917ed39f90251a91dbee7.jpg"
+    --"https://img3.gelbooru.com//images/a5/64/a5642061958917ed39f90251a91dbee7.jpg"
 }
 local annoying = {
     "particle/tinyfiresprites/tinyfiresprites",
